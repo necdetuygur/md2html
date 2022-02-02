@@ -13,28 +13,26 @@
     </style>
   </head>
   <body>
-    <div style="display: flex; justify-content: space-between">
-      <textarea
-        placeholder="Input"
-        id="inp"
-        onkeypress="convert(this.value)"
-        onkeydown="convert(this.value)"
-        onkeyup="convert(this.value)"
-        style="
-          outline: none;
-          display: inline-block;
-          border: none;
-          border-right: 1px solid #aaa;
-          width: 45%;
-          height: 95vh;
-          padding: 5px;
-        "
-      ></textarea>
-      <div
-        id="out"
-        style="display: inline-block; width: 45%; height: 95vh; padding: 5px"
-      ></div>
-    </div>
+    <textarea
+      placeholder="Input"
+      id="inp"
+      onkeypress="convert(this.value)"
+      onkeydown="convert(this.value)"
+      onkeyup="convert(this.value)"
+      style="
+        outline: none;
+        display: inline-block;
+        border: none;
+        border-right: 1px solid #aaa;
+        width: 45%;
+        height: 95vh;
+        padding: 5px;
+      "
+    ></textarea>
+    <div
+      id="out"
+      style="display: inline-block; width: 45%; height: 95vh; padding: 5px; vertical-align: text-bottom;"
+    ></div>
     <script>
       document.body.onpaste = function (e) {
         var data = e.clipboardData.items[0].getAsFile();
