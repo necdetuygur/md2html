@@ -47,7 +47,7 @@
       };
 
       function convert(a) {
-        a = a + "\n\n\n---";
+        a = a.replace(/\n/ig, "\n\n") + "\n\n\n---";
         document.getElementById("out").innerHTML =
           new showdown.Converter().makeHtml(a);
       }
