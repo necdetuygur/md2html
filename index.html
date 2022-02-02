@@ -17,6 +17,8 @@
       <textarea
         placeholder="Input"
         id="inp"
+        onkeypress="convert(this.value)"
+        onkeydown="convert(this.value)"
         onkeyup="convert(this.value)"
         style="
           outline: none;
