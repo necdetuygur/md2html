@@ -32,7 +32,13 @@
     ></textarea>
     <div
       id="out"
-      style="display: inline-block; width: 47%; height: 95vh; padding: 5px; vertical-align: text-bottom;"
+      style="
+        display: inline-block;
+        width: 47%;
+        height: 95vh;
+        padding: 5px;
+        vertical-align: text-bottom;
+      "
     ></div>
     <script>
       document.body.onpaste = function (e) {
@@ -49,12 +55,13 @@
 
       function convert(a) {
         localStorage.setItem("inp", a);
-        a = a.replace(/\n/ig, "\n\n") + "\n\n\n---";
+        a = a.replace(/\n/gi, "\n\n") + "\n\n\n---";
         document.getElementById("out").innerHTML =
           new showdown.Converter().makeHtml(a);
       }
 
       document.getElementById("inp").value = localStorage.getItem("inp");
+      convert(document.getElementById("inp").value);
       document.getElementById("inp").focus();
       document.getElementById("inp").select();
     </script>
