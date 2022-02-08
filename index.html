@@ -55,9 +55,9 @@
 
       function convert(a) {
         localStorage.setItem("inp", a);
-        a = a.replace(/\n/gi, "\n\n") + "\n\n\n---";
+        a = a.replace(/\n/gi, "\n\n");
         document.getElementById("out").innerHTML =
-          new showdown.Converter().makeHtml(a);
+          new showdown.Converter().makeHtml(a + "\n\n\n---");
       }
 
       document.getElementById("inp").value = localStorage.getItem("inp");
